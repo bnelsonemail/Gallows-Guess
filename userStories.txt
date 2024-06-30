@@ -1,0 +1,31 @@
+As a user of this game, the game needs to work without any glitchs.
+
+
+The beginning application site will contain the title of the game, instructions of how the game works, how the user will interact with the game, and a start button.  Nothing else will be displayed on the page.  After clicking on the start button, the game will appear and the start screen will be hidden.
+
+
+Once the game is started, a graphic will show on the left of the screen.  It will contain the frame for the hangman.  As guesses are incorrect, the graphics for the hangman will appear.  The order shall be as follows:
+        -   Head
+        -   Torso
+        -   Left leg
+        -   Right leg
+        -   Left arm
+        -   Right arm
+
+
+As user guesses incorrectly, the incorrect letters will tally on the bottom of the page allowing the user to see previous guesses.
+As user guesses correctly, the letters will appear in the correct location of the word, which will be displayed to the right of the graphics.
+
+
+The selected word will be hidden, but there will be lines representing letters for each letter in the word.
+
+
+The user will lose the game upon the 6th incorrect guess.
+
+
+Alerts:
+        -   If the player wins the game, there will be an alert congratulating them on the win.
+        -   If the player loses the game, there will be an aleart stating they lost.
+        -   Upon clicking on okay on the alert, the game will be reset.
+        -   If a player guesses a letter that has already been guessed incorrectly or correctly, an alert will pop up warning the user that letter has already been chosen and to  please select another letter.
+        

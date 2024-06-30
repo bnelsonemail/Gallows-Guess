@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <!-- include CSS for Jasmine 
+    <link rel="stylesheet" href="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.css" />
+     CSS File to go here -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        #game-container {
+            display: none; /* Hidden by default */
+        }
+
+        #actions {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="start-game">
+            <h1 class="heading">Hangman Game!!</h1>
+        </div>
+        <div id="intro">
+            <h2 class="intro">Type a letter into the input box to guess the random word.  The incorrect letters guessed will be displayed on screen.  The correct letters will be shown in the word.  Incorrect guesses will result in a graphic on the side with a hangman.  Once all parts of the hangman are displayed the game is over.  If you beat the hangman, then you win!</h2>
+            <h2 class="intro">Press the button below to start the game!!  Good Luck!!</h2>
+        </div>
+        <div class="start-button">
+            <button id="start-button">Start Game</button>
+        </div>
+    </header>
+    <main>
+        <section id="game-container" class="game-container">
+            <div id="selected-word">
+                <h3>The word has been chosen: Guess the letters</h3>
+            </div>
+            <div id="selected-word-container"></div>
+            <div id="reveal-word-container"></div>
+            <div id="guess-container">
+                <form id="guesses-form" onsubmit="submitForm(event)">
+                    <label class="guesses" for="userGuesses">Input Guess:</label>
+                    <input 
+                    id="userGuesses"
+                    class="guesses" 
+                    type="text" 
+                    name="userGuesses" 
+                    maxlength="1"
+                    onchange="handleGuess(event)"
+                    />
+                    <button type="submit" id="guesses-submit" class="guesses">Submit</button>
+                </form>
+            </div>
+            <div class="display-heading"><h3>Guesses are displayed below:</h3><br></div>
+            <div id="display-guesses">
+                       
+            </div>
+            <span id="hangman-graphics">
+                <span id="frame"></span>
+                <span id="hangman"></span>
+            </span>
+            
+        </section>
+        <section id="actions">
+            <div class="actions">
+                <button class="restart">Restart</button>
+            </div>
+        </section>
+             <!-- include JS for Jasmine 
+             <script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.js"></script>
+             <script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine-html.js"></script>
+             <script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot0.js"></script>
+             <script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot1.js"></script>   
+    -->
+    </main>
+    
+    <!--<script src="script.test.js"></script>-->
+</body>
+</html>
