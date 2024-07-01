@@ -133,7 +133,6 @@ function initializeGame(){
     const randomIndex = randomWord(wordList);
     //console.log(`the random index: ${randomIndex}`)
     
-
     // return the selected word to access outside of the function
     return selectedWord = randomIndex.split('');
 }
@@ -142,6 +141,8 @@ function initializeGame(){
 const startGame = initializeGame();
 // call to display the selected word
 const wordDisplay = displayWord(selectedWord);
+
+
 
 
 
@@ -360,7 +361,7 @@ displayGuesses()
 // function to reveal the index values of the selectedWord using the index values in matchingGuesses into the reveal-word-container
 function revealWord() {
     const revealContainer = document.getElementById('reveal-word-container');
-    revealContainer.innerHTML = ''; // Clear the container
+    //revealContainer.innerHTML = ''; // Clear the container
 
     for (let i = 0; i < selectedWord.length; i++) {
         let char = document.createElement('div');
@@ -376,6 +377,8 @@ function revealWord() {
         revealContainer.appendChild(char);
     }
 }
+
+revealWord()
 
 
 
