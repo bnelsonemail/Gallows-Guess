@@ -3,7 +3,7 @@ As a user of this game, the game needs to work without any glitchs.
 
 The beginning application site will contain the title of the game, instructions of how the game works, how the user will interact with the game, and a start button.  Nothing else will be displayed on the page.  After clicking on the start button, the game will appear and the start screen will be hidden.
 
-
+NOTE:  The graphics is a want, but is not a necessary feature for the minimum functionality
 Once the game is started, a graphic will show on the left of the screen.  It will contain the frame for the hangman.  As guesses are incorrect, the graphics for the hangman will appear.  The order shall be as follows:
         -   Head
         -   Torso
