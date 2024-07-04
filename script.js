@@ -168,26 +168,6 @@ function randomWord(wordList) {
 // function to place selected word into an array on the web page in the word container
 
 console.log(`the selectedWord is: ${selectedWord}`)
-/*
-function displayWord(selectedWord) {
-    const wordContainer = document.getElementById('selected-word-container');
-    wordContainer.innerHTML = '';  // Clear the container
-
-    for (let i = 0; i < selectedWord.length; i++) {
-        let char = document.createElement('div');
-        char.classList.add('selected-word');
-        char.id = i;
-
-        if (matchingGuesses.length !== 0) {
-            char.textContent = selectedWord[i];  // Reveal the correct letter
-        } else {
-            char.textContent = '_';  // Keep it hidden
-        }
-        
-        wordContainer.appendChild(char);
-    }
-}
-*/
 
 
 
@@ -225,6 +205,7 @@ let inputs = {
 }
 
 
+
 function handleGuess(e){
     // Update the inputs object with the new value
     inputs.userGuesses = e.target.value;
@@ -232,12 +213,10 @@ function handleGuess(e){
     return letter
 };
 
-//console.log(`The return value: ${guesses}`)
+
 
 function submitForm(e){
     e.preventDefault();
-    //console.log(`Form submitted with the following data: ${inputs.userGuesses}`);
-    // Also add here => form validation, api calls (try, catch), error handling
     document.getElementById('guesses-form');
     /*inputs = {
         userGuesses: ''
@@ -296,7 +275,13 @@ function analyzeGuess(){
     })
 }
 
+// Call analyzeGuess
 analyzeGuess()
+
+
+
+
+
 
 
 // function to compare the guess to the selected word and match all the matching indices. 
@@ -320,14 +305,6 @@ function matchingIndices(arr,value){
 }
 
 
-// TODO: This function needs work and is not working properly
-// FIXME:    Currently it is returning the first index[0] every time.
-/*
-function fillArrayWithMatchingIndices (arr){ 
-    return arr.map(function (val, matchingGuesses){
-        return val[matchingGuesses]
-    })
-}*/
 
 
 
@@ -352,12 +329,13 @@ function displayGuesses() {
     })
 }
 
+// Calls displayGuesses function
 displayGuesses()
 
 
 
 // TODO: This function is NOT working
-
+/*
 // function to reveal the index values of the selectedWord using the index values in matchingGuesses into the reveal-word-container
 function revealWord() {
     const revealContainer = document.getElementById('reveal-word-container');
@@ -379,7 +357,7 @@ function revealWord() {
 }
 
 revealWord()
-
+*/
 
 
 
