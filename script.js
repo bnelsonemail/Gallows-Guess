@@ -267,7 +267,8 @@ function analyzeGuess(){
         displayGameState();
 
         // check if game is won or lost
-        if (guessedLetters.join(' ') === selectedWord.join('')) {
+        //if (guessedLetters.join(' ') === selectedWord.join('')) {
+        if(matchingGuesses.length === selectedWord.length){
             alert (`Congratulations! You guessed the word: ${selectedWord.join("")}`);
         } else if (remainingGuesses === 0) {
             alert (`Game Over!  The word was: ${selectedWord.join("")}`);
