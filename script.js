@@ -262,6 +262,7 @@ function analyzeGuess(){
         if(isCorrectGuess){
             matchingIndices(selectedWord, analyzedLetter)
             updateCorrectGuesses(selectedWord, matchingGuesses)
+            revealWord(correctGuesses)
             displayWord(selectedWord, matchingGuesses)
         
         }
@@ -377,8 +378,19 @@ function updateCorrectGuesses(selectedWord, matchingGuesses) {
     
     return correctGuesses
 }
-/*
-function revealWord(correctGuesses)
+
+function revealWord(correctGuesses){
+    for(i = 0; i < selectedWord.length; i++){
+    let revealLetter = []
+    console.log(`revealLetter: ${revealLetter}`)
+    const reveal = document.getElementById(matchingGuesses)
+    let idx = correctGuesses.pop()
+    //let idx = matchingGuesses.value
+    //console.log(`idx: ${idx}`)
+    return revealLetter = reveal.textContent = idx
+    
+    }
+}
 
 
 /*
