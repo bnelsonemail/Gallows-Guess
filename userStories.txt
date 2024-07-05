@@ -29,3 +29,20 @@ Alerts:
         -   Upon clicking on okay on the alert, the game will be reset.
         -   If a player guesses a letter that has already been guessed incorrectly or correctly, an alert will pop up warning the user that letter has already been chosen and to  please select another letter.
         
+
+
+Reveal Word:
+
+What if you do something like the following: 
+1. create an array called something like 'correctGuesses'. 
+
+2. That array is created with some standin value for each letter of the secretword (e.g., if secret word is 'Dog'; correctGuesses would initialize as = [0, 0, 0]; When a user makes a correct guess, you can use the splice method to add the letter to correctGuesses at the appropriate index placement:  
+let myArray = [0, 0, 0];  
+myArray.splice(1, 1, 10); // replaces '0' with '10' at myArray[1] 
+(myArray now: [0, 10, 0]) 
+
+3. When the user makes a correct guess, you already log the corresponding index value of letter in secret word. You could use splice to add letter to array in that spot and replace filler value.  
+
+4. Create a function that checks correctGuesses each time a user guesses and updates the display of correct guesses for user.  
+
+5. to accomplish 4, You have a div with id='selected-word-container'; this has divs each with an id='index value' (0, 1, ...); so use getElementById(indexValue) to access the div of the index value for the correct guess, and add a new textContent with value from correctGuesses corresponding to index value/div id. (e.g., if word is 'dog', user guesses 'o', that's index 1. so 'o' needs to be placed in correctGuesses at index value 1. then you can write a function to check correctGuesses and grab the div with the id that corresponds to the letter's index value. create a new textContent and append it to it.)

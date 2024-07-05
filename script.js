@@ -86,10 +86,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
     })
 })
 
-const matchingGuesses = []
+const matchingGuesses = [] // array containing the indices of the correct guesses
+const correctGuesses = [] // array containing the value of the indices of the correct guesses
 let guessedLetters = [];
 let wrongGuesses = 0;
 let remainingGuesses = 6;
+
 console.log(`guessed letters: ${guessedLetters}`);
 console.log(`wrong guesses: ${wrongGuesses}`);
 
@@ -183,7 +185,7 @@ function displayWord(selectedWord) {
             if(matchingGuesses.length !== 0) {
                 char.textContent = selectedWord[i];  // Reveal the correct letter  
                 wordContainer.appendChild(char);
-                }
+            }
             else {
             char.textContent = '_';
             wordContainer.appendChild(char);
@@ -192,11 +194,11 @@ function displayWord(selectedWord) {
     }
 
         // TODO: compare matchingGuesses (array with index of correct guesses) to selectedWord to reveal the index from matchingGuesses
-       /*else if(matchingGuesses.length !== 0) {
+       /*if(matchingGuesses.length !== 0) {
             char.textContent = selectedWord[i];  // Reveal the correct letter  
-            }
         }*/
 }
+//}
 
 
 
@@ -259,8 +261,8 @@ function analyzeGuess(){
         // Display letters in separate array 
         if(isCorrectGuess){
             matchingIndices(selectedWord, analyzedLetter)
-            
-           displayWord(selectedWord, matchingGuesses)
+            updateCorrectGuesses(selectedWord, matchingGuesses)
+            displayWord(selectedWord, matchingGuesses)
         
         }
         // Display the updated game state
@@ -336,6 +338,8 @@ displayGuesses()
 
 
 // TODO: This function is NOT working
+
+
 /*
 // function to reveal the index values of the selectedWord using the index values in matchingGuesses into the reveal-word-container
 function revealWord() {
@@ -346,10 +350,13 @@ function revealWord() {
         let char = document.createElement('div');
         char.classList.add('selected-word');
         char.id = i;
-
+        let test = correctGuesses.push(selectedWord[matchingGuesses[i]])
+        console.log(`test value: ${test}`)
+        console.log(`matchingGuesses values: ${matchingGuesses[i].values}`)
         if (matchingGuesses.includes(i)) {
             char.textContent = selectedWord[i]; // Reveal the correct letter
-        } else {
+        } 
+        /*else {
             char.textContent = '_'; // Keep it hidden
         }
 
@@ -358,12 +365,20 @@ function revealWord() {
 }
 
 revealWord()
+
 */
-
-
-
-
-
+// this function places the correct guesses value from selectedWord into the correct index of correctGuesses
+function updateCorrectGuesses(selectedWord, matchingGuesses) {
+    for (let i = 0; i < matchingGuesses.length; i++) {
+        const index = matchingGuesses[i];
+        correctGuesses[index] = selectedWord[index];
+        console.log(`correctGuesses: ${correctGuesses}`)
+    }
+    
+    return correctGuesses
+}
+/*
+function revealWord(correctGuesses)
 
 
 /*
