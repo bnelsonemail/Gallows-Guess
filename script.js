@@ -380,17 +380,35 @@ function updateCorrectGuesses(selectedWord, matchingGuesses) {
 }
 
 function revealWord(correctGuesses){
-    for(i = 0; i < selectedWord.length; i++){
     let revealLetter = []
-    console.log(`revealLetter: ${revealLetter}`)
-    const reveal = document.getElementById(matchingGuesses)
-    let idx = correctGuesses.pop() // attempting to only use one array value for the div, matchingGuesses is an array with multiple elements for one div.
-    //let idx = matchingGuesses.value
-    //console.log(`idx: ${idx}`)
-    return revealLetter = reveal.textContent = idx
+    for(i = 0; i < selectedWord.length; i++){
     
+    console.log(`revealLetter: ${revealLetter}`)
+    const reveal = document.getElementById('selected-word-container')
+        if(matchingGuesses.length > 0){
+            correctGuesses.forEach(function (val, idx) {
+                if(val !== null){
+                    let val = reveal.textContent = correctGuesses.slice()
+                    return val
+                }
+                else{
+                    let idx = reveal.textContent = '_'
+                    return idx
+                }
+                
+            })
+        }
     }
 }
+        
+
+     // attempting to only use one array value for the div, matchingGuesses is an array with multiple elements for one div.
+    //let idx = matchingGuesses.value
+    //console.log(`idx: ${idx}`)
+    //return revealLetter = reveal.textContent = idx
+    
+    
+
 
 
 /*
