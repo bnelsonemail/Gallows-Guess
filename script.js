@@ -384,7 +384,7 @@ function revealWord(correctGuesses){
     let revealLetter = []
     console.log(`revealLetter: ${revealLetter}`)
     const reveal = document.getElementById(matchingGuesses)
-    let idx = correctGuesses.pop()
+    let idx = correctGuesses.pop() // attempting to only use one array value for the div, matchingGuesses is an array with multiple elements for one div.
     //let idx = matchingGuesses.value
     //console.log(`idx: ${idx}`)
     return revealLetter = reveal.textContent = idx
